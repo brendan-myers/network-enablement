@@ -19,7 +19,7 @@ func main() {
 
 	w := worker.New(c, "my-task-queue", worker.Options{})
 
-	w.RegisterWorkflow(longworkflow.SayHelloWorkflow)
+	w.RegisterWorkflow(longworkflow.LongHelloWorkflow)
 	w.RegisterActivity(longworkflow.Greet)
 
 	err = w.Run(worker.InterruptCh())
