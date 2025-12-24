@@ -15,7 +15,7 @@ func LongHelloWorkflow(ctx workflow.Context, name string) (string, error) {
  	var result string
 
   for range(12) {
-    workflow.Sleep(time.Second * 10)
+    workflow.Sleep(ctx, time.Second * 10)
   	err := workflow.ExecuteActivity(ctx, Greet, name).Get(ctx, &result)
   	if err != nil {
    		return "", err
